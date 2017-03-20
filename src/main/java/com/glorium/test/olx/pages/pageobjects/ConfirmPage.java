@@ -17,7 +17,7 @@ public class ConfirmPage extends AbstractHelpPage {
 
     public ConfirmPage checkThatYourAdvertisementHasAccepted() {
         waitUntilElemWillBePresent(YOUR_ADVERTISEMENT_ACCEPTED);
-        Assert.assertEquals(getTextFromYourAdvertisementAcceptedSection(), "Ваше объявление принято");
+        Assert.assertEquals(getTextFromYourAdvertisementAcceptedSection(), "Р’Р°С€Рµ РѕР±СЉСЏРІР»РµРЅРёРµ РїСЂРёРЅСЏС‚Рѕ");
         return this;
     }
 
