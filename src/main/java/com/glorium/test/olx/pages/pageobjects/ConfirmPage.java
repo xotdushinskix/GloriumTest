@@ -15,14 +15,14 @@ public class ConfirmPage extends AbstractHelpPage {
         super(driver);
     }
 
+    private String getTextFromYourAdvertisementAcceptedSection() {
+        return getElement(YOUR_ADVERTISEMENT_ACCEPTED).getText();
+    }
+
     public ConfirmPage checkThatYourAdvertisementHasAccepted() {
         waitUntilElemWillBePresent(YOUR_ADVERTISEMENT_ACCEPTED);
         Assert.assertEquals(getTextFromYourAdvertisementAcceptedSection(), "Ваше объявление принято");
         return this;
-    }
-
-    private String getTextFromYourAdvertisementAcceptedSection() {
-        return getElement(YOUR_ADVERTISEMENT_ACCEPTED).getText();
     }
 
 }

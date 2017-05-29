@@ -22,9 +22,9 @@ public class OlxMainPage extends AbstractHelpPage {
 		return new LoginPage((FirefoxDriver)driver);
 	}
 
-	public OlxMainPage postNewAdvertisement() {
+	public CreateAdvertisementPage postNewAdvertisement() {
 		waitUntilElemWillBePresent(POST_NEW_ADVERTISEMENT).click();
-		return this;
+		return new CreateAdvertisementPage((FirefoxDriver) driver);
 	}
 
 	public OlxMainPage openMyProfile() {

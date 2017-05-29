@@ -7,8 +7,7 @@ public class CreateNewAdvertisementTest extends AbstractHelpAdvertisementTest {
 	@Test
 	public void testCreateNewAdvertisement() {
 		olxMainPage
-				.postNewAdvertisement();
-		createAdvertisementPage
+				.postNewAdvertisement()
 				.openRubrics()
 				.openPetsChapter()
 				.selectCatsSection()
@@ -16,11 +15,9 @@ public class CreateNewAdvertisementTest extends AbstractHelpAdvertisementTest {
 				.fillPrice(100)
 				.selectPersianBreed()
 				.selectPrivateAuthorType()
-				.fillDescription("by a cat, by a cat, by a cat, by a cat")
-				.clickOnFurtherButton();
-		paymentPage
-				.cancelPayment();
-		confirmPage
+				.fillDescription("hello world, hello world, hello world")
+				.clickOnFurtherButton()
+				.cancelPayment()
 				.checkThatYourAdvertisementHasAccepted();
 	}
 

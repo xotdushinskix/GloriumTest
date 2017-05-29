@@ -15,9 +15,9 @@ public class PaymentPage extends AbstractHelpPage {
         this.driver = driver;
     }
 
-    public PaymentPage cancelPayment() {
+    public ConfirmPage cancelPayment() {
         waitUntilElemWillBePresent(CANCEL_PAYMENT).click();
-        return this;
+        return new ConfirmPage((FirefoxDriver)driver);
     }
 
 }

@@ -1,12 +1,9 @@
 package com.glorium.test.olx;
 
-import com.glorium.test.olx.pages.pageobjects.ConfirmPage;
-import com.glorium.test.olx.pages.pageobjects.PaymentPage;
+import com.glorium.test.olx.pages.pageobjects.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
-import com.glorium.test.olx.pages.pageobjects.CreateAdvertisementPage;
-import com.glorium.test.olx.pages.pageobjects.OlxMainPage;
 import com.glorium.test.olx.util.WebDriverUtil;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -16,6 +13,7 @@ public class AbstractHelpAdvertisementTest extends WebDriverUtil {
 	protected static CreateAdvertisementPage createAdvertisementPage;
 	protected static ConfirmPage confirmPage;
 	protected static PaymentPage paymentPage;
+	protected static LoginPage loginPage;
 
 	@BeforeClass
 	public static void before() {
@@ -23,11 +21,12 @@ public class AbstractHelpAdvertisementTest extends WebDriverUtil {
 		createAdvertisementPage = new CreateAdvertisementPage((FirefoxDriver) getWebDriver());
 		confirmPage = new ConfirmPage((FirefoxDriver) getWebDriver());
 		paymentPage = new PaymentPage((FirefoxDriver) getWebDriver());
+		loginPage = new LoginPage((FirefoxDriver) getWebDriver());
 		logInBeforeCreateAdvertisement();
 	}
 
 	private static void logInBeforeCreateAdvertisement() {
-		olxMainPage.openMyProfile().getLoginPage().logIn("@gmail.com", "pass");
+		loginPage.logIn("@gmail.com", "pass");
 	}
 
 	@AfterClass

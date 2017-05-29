@@ -58,20 +58,20 @@ public class CreateAdvertisementPage extends AbstractHelpPage {
 		return this;
 	}
 
+	public CreateAdvertisementPage fillDescription(String description) {
+		getElement(DESCRIPTION_PART).sendKeys(description);
+		return this;
+	}
+
 	public CreateAdvertisementPage selectPrivateAuthorType() {
 		getElement(AUTHOR_TYPE).click();
 		getElement(PRIVATE_PERSON).click();
 		return this;
 	}
 
-	public CreateAdvertisementPage fillDescription(String description) {
-		getElement(DESCRIPTION_PART).sendKeys(description);
-		return this;
-	}
-
-	public CreateAdvertisementPage clickOnFurtherButton() {
+	public PaymentPage clickOnFurtherButton() {
 		getElement(FURTHER_BUTTON).click();
-		return this;
+		return new PaymentPage((FirefoxDriver)driver);
 	}
 
 }
